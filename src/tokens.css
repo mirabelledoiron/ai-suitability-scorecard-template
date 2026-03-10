@@ -1,0 +1,226 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   Palette:  #F2F2F2 Light Grey · #CBCBCB Mid Grey · #4A4A4A Dark Grey · #6D8196 Blue
+
+   Theme application:
+     - Default:              light mode
+     - [data-theme="dark"]:  manual dark override
+     - [data-theme="light"]: manual light override (wins over system dark)
+     - prefers-color-scheme: dark  →  auto dark (unless [data-theme="light"])
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Layout & Typography (theme-independent) ──────────────────────────────── */
+:root {
+  --sidebar-width: 248px;
+  --main-padding-top: 52px;
+  --main-padding-x: 56px;
+  --main-padding-bottom: 80px;
+  --card-padding-y: 22px;
+  --card-padding-x: 24px;
+
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+  --font-size-xs: 10px;
+  --font-size-sm: 11px;
+  --font-size-base: 13px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 26px;
+  --font-size-3xl: 36px;
+}
+
+/* ── Light Mode (default) ─────────────────────────────────────────────────── */
+:root {
+  /* Page */
+  --color-bg: #F2F2F2;
+  --color-text: #4A4A4A;
+
+  /* Text scale */
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #5c6775;
+  --color-text-subtle: #4f6070;
+  --color-text-faint: #4f6070;
+  --color-text-placeholder: #536271;
+  --color-text-hint: #636363;
+  --color-text-dim: #636363;
+  --color-text-on-dark: #F2F2F2;   /* text ON dark/accent backgrounds */
+
+  /* Surfaces */
+  --color-surface-input: #FAFAFA;
+  --color-surface-hover: #E8E8E8;
+  --color-surface-note: #EBEBEB;
+  --color-surface-chip: #E0E0E0;
+  --color-chip-text: #4A4A4A;
+
+  /* Borders */
+  --color-border: #CBCBCB;
+  --color-border-light: #D8D8D8;
+  --color-border-note: #CBCBCB;
+  --color-border-hover: #6D8196;
+
+  /* Cards */
+  --color-card-border: #CBCBCB;
+  --color-card-bg: #F8F8F8;
+
+  /* Sidebar */
+  --color-sidebar-bg: #4A4A4A;
+  --color-sidebar-text: #CBCBCB;
+  --color-sidebar-divider: #5c5c5c;
+  --color-sidebar-hover-bg: rgba(255,255,255,0.08);
+  --color-sidebar-active-bg: rgba(255,255,255,0.18);
+  --color-sidebar-active-text: #F2F2F2;
+  --color-sidebar-hover-text: #F2F2F2;
+
+  /* Primary brand — overridden at runtime by applyTenantTheme() */
+  --color-primary: #4f6070;
+  --color-accent: #4f6070;
+
+  /* Category: no-fit (red) */
+  --color-no-fit: #a93226;
+  --color-no-fit-bg: #fde8e6;
+  --color-no-fit-dark: #7b241c;
+
+  /* Category: automation (amber) */
+  --color-automation: #8c4a06;
+  --color-automation-bg: #fdebd0;
+  --color-automation-dark: #7e4306;
+
+  /* Category: ai-assisted (uses palette blue) */
+  --color-ai-assisted: #3d5566;
+  --color-ai-assisted-bg: #e8eef3;
+  --color-ai-assisted-dark: #2e414f;
+
+  /* Category: ai-system (green) */
+  --color-ai-system: #1e7e4a;
+  --color-ai-system-bg: #e4f5ec;
+  --color-ai-system-dark: #145230;
+
+  /* Default / unanswered */
+  --color-default: #9aabbb;
+  --color-default-bg: #E8E8D0;
+  --color-default-dark: #6D8196;
+
+  /* Risk badge */
+  --color-risk-bg: #fdf3d0;
+  --color-risk-text: #7a5200;
+  --color-risk-border: #d4a017;
+
+  /* Score bar pending state */
+  --color-score-pending: #CBCBCB;
+
+  /* Modal overlay */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Dark Mode tokens ─────────────────────────────────────────────────────── */
+/* Shared values used in both blocks below */
+
+/* Auto dark — respects system preference unless manually overridden */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #4A4A4A;
+    --color-text: #FFFFE3;
+    --color-text-secondary: #FFFFE3;
+    --color-text-muted: #CBCBCB;
+    --color-text-subtle: #CBCBCB;
+    --color-text-faint: #CBCBCB;
+    --color-text-placeholder: #b0b0b0;
+    --color-text-hint: #bbbbbb;
+    --color-text-dim: #bbbbbb;
+    --color-text-on-dark: #4A4A4A;
+    --color-surface-input: #545454;
+    --color-surface-hover: #5c5c5c;
+    --color-surface-note: #515151;
+    --color-surface-chip: #4f6070;
+    --color-chip-text: #FFFFE3;
+    --color-border: #6D8196;
+    --color-border-light: #5a5a5a;
+    --color-border-note: #6D8196;
+    --color-border-hover: #CBCBCB;
+    --color-card-border: #6D8196;
+    --color-card-bg: #525252;
+    --color-sidebar-bg: #384e61;
+    --color-sidebar-text: #CBCBCB;
+    --color-sidebar-divider: rgba(255,255,255,0.15);
+    --color-sidebar-hover-bg: rgba(0,0,0,0.18);
+    --color-sidebar-active-bg: rgba(0,0,0,0.32);
+    --color-sidebar-active-text: #FFFFE3;
+    --color-sidebar-hover-text: #FFFFE3;
+    --color-primary: #CBCBCB;
+    --color-accent: #CBCBCB;
+    --color-no-fit: #e05c4f;
+    --color-no-fit-bg: #3d1a17;
+    --color-no-fit-dark: #f0a098;
+    --color-automation: #d4892a;
+    --color-automation-bg: #3d2606;
+    --color-automation-dark: #f0c07a;
+    --color-ai-assisted: #8da8bc;
+    --color-ai-assisted-bg: #1e2e38;
+    --color-ai-assisted-dark: #b8ceda;
+    --color-ai-system: #3aad6a;
+    --color-ai-system-bg: #0d2e1c;
+    --color-ai-system-dark: #7ed4a8;
+    --color-default: #7a7a7a;
+    --color-default-bg: #555555;
+    --color-default-dark: #CBCBCB;
+    --color-risk-bg: #3d2e00;
+    --color-risk-text: #ffd966;
+    --color-risk-border: #a07800;
+    --color-score-pending: #5a5a5a;
+    --color-overlay: rgba(0, 0, 0, 0.65);
+  }
+}
+
+/* Manual dark override — always wins regardless of system preference */
+[data-theme="dark"] {
+  --color-bg: #4A4A4A;
+  --color-text: #FFFFE3;
+  --color-text-secondary: #FFFFE3;
+  --color-text-muted: #CBCBCB;
+  --color-text-subtle: #CBCBCB;
+  --color-text-faint: #CBCBCB;
+  --color-text-placeholder: #b0b0b0;
+  --color-text-hint: #bbbbbb;
+  --color-text-dim: #bbbbbb;
+  --color-text-on-dark: #4A4A4A;
+  --color-surface-input: #545454;
+  --color-surface-hover: #5c5c5c;
+  --color-surface-note: #515151;
+  --color-surface-chip: #4f6070;
+  --color-chip-text: #FFFFE3;
+  --color-border: #6D8196;
+  --color-border-light: #5a5a5a;
+  --color-border-note: #6D8196;
+  --color-border-hover: #CBCBCB;
+  --color-card-border: #6D8196;
+  --color-card-bg: #525252;
+  --color-sidebar-bg: #384e61;
+  --color-sidebar-text: #CBCBCB;
+  --color-sidebar-divider: rgba(255,255,255,0.15);
+  --color-sidebar-hover-bg: rgba(0,0,0,0.18);
+  --color-sidebar-active-bg: rgba(0,0,0,0.32);
+  --color-sidebar-active-text: #FFFFE3;
+  --color-sidebar-hover-text: #FFFFE3;
+  --color-primary: #CBCBCB;
+  --color-accent: #CBCBCB;
+  --color-no-fit: #e05c4f;
+  --color-no-fit-bg: #3d1a17;
+  --color-no-fit-dark: #f0a098;
+  --color-automation: #d4892a;
+  --color-automation-bg: #3d2606;
+  --color-automation-dark: #f0c07a;
+  --color-ai-assisted: #8da8bc;
+  --color-ai-assisted-bg: #1e2e38;
+  --color-ai-assisted-dark: #b8ceda;
+  --color-ai-system: #3aad6a;
+  --color-ai-system-bg: #0d2e1c;
+  --color-ai-system-dark: #7ed4a8;
+  --color-default: #7a7a7a;
+  --color-default-bg: #555555;
+  --color-default-dark: #CBCBCB;
+  --color-risk-bg: #3d2e00;
+  --color-risk-text: #ffd966;
+  --color-risk-border: #a07800;
+  --color-score-pending: #5a5a5a;
+  --color-overlay: rgba(0, 0, 0, 0.65);
+}

@@ -1,0 +1,216 @@
+{
+  "workflows": [
+    { "id": 1,  "group": "Operations", "title": "Intake & Triage",                "desc": "Capturing requests, gathering context, prioritizing, and routing work" },
+    { "id": 2,  "group": "Operations", "title": "Incident & Issue Response",       "desc": "Coordinating fast responses to urgent issues, escalations, or outages" },
+    { "id": 3,  "group": "Operations", "title": "Stakeholder Updates",            "desc": "Status updates, approvals, and cross-team communication" },
+    { "id": 4,  "group": "Operations", "title": "Messaging & Documentation",      "desc": "Creating consistent messages, FAQs, guides, and internal documentation" },
+    { "id": 5,  "group": "Operations", "title": "Content Production",             "desc": "Drafting routine content, summaries, and repurposed materials" },
+    { "id": 6,  "group": "Operations", "title": "Change & Enablement",            "desc": "Internal rollout communications, enablement materials, and change support" },
+    { "id": 7,  "group": "Operations", "title": "Training & Coaching",            "desc": "Workshops, onboarding, and skills coaching that require human judgment" },
+    { "id": 8,  "group": "Marketing",  "title": "Content Marketing",              "desc": "Blogs, articles, newsletters — content that attracts and retains audience" },
+    { "id": 9,  "group": "Marketing",  "title": "Campaign Planning & Activation", "desc": "Multi-channel campaign strategy, design, and rollout" },
+    { "id": 10, "group": "Marketing",  "title": "Branding",                       "desc": "Brand identity development and refinement — visual and verbal" },
+    { "id": 11, "group": "Marketing",  "title": "Email & Marketing Automation",   "desc": "Automated workflows, nurture sequences, and email campaign management" },
+    { "id": 12, "group": "Marketing",  "title": "SEO & AIO",                      "desc": "Organic search optimization and AI-driven search presence" },
+    { "id": 13, "group": "Creative",   "title": "Design & Collateral",            "desc": "Branded materials, reports, digital assets, visual communications" },
+    { "id": 14, "group": "Creative",   "title": "Website Design & Development",   "desc": "Discovery, IA, design, build, QA, and launch — full site delivery" },
+    { "id": 15, "group": "Creative",   "title": "Website Content & Copy",         "desc": "Web copy, narrative structure, and page-level messaging" }
+  ],
+  "context": {
+    "1": {
+      "intro": "Intake and triage can be high-volume and repetitive, but the quality of outcomes depends on getting the right context and routing. AI can assist with summarizing requests, extracting key fields, and suggesting categories — while humans own prioritization and final decisions.",
+      "hints": {
+        "1": "Requests arrive continuously through email, chat, forms, or ticketing — often multiple times per day.",
+        "2": "The bottleneck is often context gathering and prioritization — a mix of volume and judgment.",
+        "3": "Mis-triage can delay critical work or frustrate stakeholders. Stakes range from low to moderate.",
+        "4": "Intake forms may contain client-sensitive details or internal project data. Assess whether any PII or confidential content flows through before selecting an AI tool.",
+        "5": "Past tickets, knowledge base articles, and request templates provide strong reference material.",
+        "6": "Intake formats vary (emails, screenshots, calls). A standard form significantly improves repeatability.",
+        "7": "A quick human review before assigning work prevents misroutes and unnecessary escalations.",
+        "8": "Routing can be verified: correct category, correct owner, and correct priority."
+      }
+    },
+    "2": {
+      "intro": "Incident and issue response is time-sensitive and high-pressure. AI can help summarize threads, draft checklists, and pull relevant runbooks — but accountability and approval must stay with humans.",
+      "hints": {
+        "1": "Incidents are episodic and unpredictable — frequency varies by org maturity.",
+        "2": "The bottleneck is coordinating information quickly and accurately under pressure.",
+        "3": "Stakes can be serious: customer impact, compliance risk, and lasting trust damage.",
+        "4": "Incident data often includes system credentials, customer impact details, or compliance-relevant information. Evaluate sensitivity carefully before using a public AI tool.",
+        "5": "Runbooks, postmortems, and incident timelines are valuable source material.",
+        "6": "Each issue has unique context, stakeholders, and constraints — inputs are rarely standardized.",
+        "7": "High-visibility updates require human approval before being sent broadly.",
+        "8": "Impact can be measured (uptime, SLA breach, user reports), but root cause takes investigation."
+      }
+    },
+    "3": {
+      "intro": "Stakeholder updates balance clarity, accuracy, and expectations. AI can help draft consistent updates and summarize progress, but humans must validate facts, risks, and commitments.",
+      "hints": {
+        "1": "Updates happen on a recurring cadence (daily/weekly) and around milestones.",
+        "2": "The bottleneck is synthesizing many threads into a clear, accurate narrative quickly.",
+        "3": "Over-promising or misstating risk can damage trust and cause real downstream costs.",
+        "4": "Updates typically reference project status and decisions. Confirm whether any confidential business data, financials, or unreleased plans are included in the inputs.",
+        "5": "Project artifacts, meeting notes, and decision logs are strong source material.",
+        "6": "Inputs can be semi-structured (tickets, notes, project plans) but often require human synthesis.",
+        "7": "Review before sending is standard: leaders validate risk, scope, and commitments.",
+        "8": "Progress is verifiable when tied to milestones, deliverables, or metrics."
+      }
+    },
+    "4": {
+      "intro": "Documentation and messaging create consistency at scale. AI can assist with first drafts, reformatting, and summarizing, but subject-matter experts must verify correctness and ensure the guidance matches reality.",
+      "hints": {
+        "1": "Docs and FAQs are updated frequently as products, policies, or processes change.",
+        "2": "The bottleneck is turning scattered knowledge into clear, reusable guidance.",
+        "3": "Incorrect documentation can cause repeated errors and increased support load; stakes vary by domain.",
+        "4": "Internal docs may contain proprietary processes, pricing, or HR-sensitive content. Consider who has access to the AI model being used.",
+        "5": "Existing docs, tickets, meeting notes, and change logs provide rich source material.",
+        "6": "Inputs range from structured specs to informal notes and chat logs.",
+        "7": "A human review step is essential before publishing guidance that teams will act on.",
+        "8": "Correctness can be checked against systems, policies, and real-world outcomes."
+      }
+    },
+    "5": {
+      "intro": "Routine content production is often a strong AI candidate: it can be high-volume, follows patterns, and has clear audiences. The key variable is how distinctive the voice must be and how sensitive the underlying brief is.",
+      "hints": {
+        "1": "Publishing or producing content can be frequent: daily updates, weekly newsletters, recurring summaries.",
+        "2": "The bottleneck is often volume: drafting, editing, and tailoring content for multiple channels.",
+        "3": "Mistakes can range from minor to serious depending on the audience and domain — external content carries more risk.",
+        "4": "Routine content is often low-sensitivity. If any client-proprietary information is included in briefs or prompts, use an enterprise model.",
+        "5": "Past content libraries, style guides, and approved examples are strong reference material.",
+        "6": "Briefs and templates provide structure; ad-hoc requests reduce repeatability significantly.",
+        "7": "Review before publishing is a key safety step, especially for external-facing content.",
+        "8": "Some outputs have clear metrics (engagement, conversion); others require subjective editorial judgment."
+      }
+    },
+    "6": {
+      "intro": "Internal communications during organizational change requires exceptional care with tone, timing, and trust. Getting this wrong damages employee confidence. AI can assist with drafting, but message ownership must sit with leadership.",
+      "hints": {
+        "1": "Change communications are campaign-based — intensive during transitions, quieter between them. Frequency varies.",
+        "2": "The bottleneck is reading the organizational culture and calibrating tone — judgment about how people are feeling right now.",
+        "3": "Poorly managed change communications accelerates talent loss and erodes trust. Consequences are real and lasting.",
+        "4": "Change communications often reference confidential restructuring plans, HR decisions, or financial information. High sensitivity — an enterprise or closed AI model is strongly recommended.",
+        "5": "Prior internal communications, org charts, HR documentation, and change management plans provide useful context.",
+        "6": "Each change situation — merger, restructure, leadership shift — requires a unique communications approach.",
+        "7": "All internal communications are reviewed by HR and senior leadership before distribution.",
+        "8": "Employee sentiment is measurable through surveys over time, but immediate message effectiveness is very hard to gauge."
+      }
+    },
+    "7": {
+      "intro": "Training and coaching are high-touch and people-intensive. Facilitating a group, reading the room, and giving personalized feedback requires human judgment. AI can help with prep materials and summaries, but cannot replace live facilitation.",
+      "hints": {
+        "1": "Sessions are scheduled based on need (onboarding, quarterly enablement, rollouts). Frequency varies.",
+        "2": "The bottleneck is facilitation and judgment: tailoring content and delivery to people and context.",
+        "3": "Stakes vary by topic; some training mistakes are low-stakes, others carry compliance or safety risk.",
+        "4": "Training content may involve performance feedback, personal development data, or HR-sensitive material. Evaluate data classification carefully before using any AI tool.",
+        "5": "Playbooks, internal docs, examples, and session recordings provide useful preparation material.",
+        "6": "Participant backgrounds and needs differ, so inputs are rarely standardized.",
+        "7": "Coaching is inherently human-reviewed and interactive — the human is the delivery mechanism.",
+        "8": "Skill improvement is measurable over time, but hard to verify in the moment."
+      }
+    },
+    "8": {
+      "intro": "Content marketing — blogs, articles, newsletters — is high volume and relatively structured. It's one of the stronger AI candidates in the marketing suite, particularly for research-heavy or SEO-driven content. The critical variable is how distinctively the client's voice needs to come through.",
+      "hints": {
+        "1": "Regular publishing cadences — weekly blog posts, monthly newsletters — mean content volume is consistently high.",
+        "2": "The core bottleneck is production volume — researching and writing enough quality content consistently.",
+        "3": "Factual errors or off-brand content can damage credibility but are usually correctable.",
+        "4": "Marketing content is typically intended for public consumption — low sensitivity. Ensure briefs don't include unreleased product, financial, or competitive information.",
+        "5": "Brand guidelines, past content libraries, SEO keyword research, and topic clusters are typically well-developed.",
+        "6": "Content briefs, editorial calendars, and SEO keyword frameworks provide solid structure to work from.",
+        "7": "Content is reviewed and approved before publication — editorial oversight is standard.",
+        "8": "Readership, search rankings, time-on-page, and lead generation provide clear performance benchmarks."
+      }
+    },
+    "9": {
+      "intro": "Campaign planning combines strategic judgment (what will resonate with this audience?) with operational execution (channel mix, budget, timeline). AI can assist with research, benchmarking, and performance analysis, but the core campaign strategy is human-led.",
+      "hints": {
+        "1": "Campaign planning cycles depend on client activity — quarterly or bi-annual for most clients. Moderate frequency.",
+        "2": "Strategy is a judgment bottleneck. Execution and optimization become volume bottlenecks once the campaign is live.",
+        "3": "A misdirected campaign wastes significant budget and can miss critical market windows. Moderate-to-high stakes.",
+        "4": "Campaign budgets and strategic plans are confidential. If client financial data or unreleased positioning is included in prompts, use a closed or enterprise model.",
+        "5": "Market research, past campaign performance data, competitor audits, and audience data are typically available.",
+        "6": "Campaign briefs have a standard structure but vary significantly by client objective, budget, and market.",
+        "7": "All campaign strategies are reviewed by senior staff and the client before activation.",
+        "8": "Campaign metrics (reach, conversion, ROI) are measurable after launch. Pre-launch strategy quality is harder to assess."
+      }
+    },
+    "10": {
+      "intro": "Branding is the most judgment-intensive marketing service. Brand identity — who you are, what you stand for, how you're perceived — requires deep listening, cultural sensitivity, and creative synthesis that AI cannot replicate. Expect a low score here. That's the correct answer.",
+      "hints": {
+        "1": "Brand development is a major engagement — once per client relationship, occasionally refreshed. Very low frequency.",
+        "2": "The bottleneck is creative and strategic synthesis — there is no throughput problem to solve.",
+        "3": "Brand positioning decisions are foundational, highly visible, and costly to reverse. Stakes are significant.",
+        "4": "Brand strategy often involves confidential competitive positioning and unreleased identity work. Use an enterprise model for all discovery sessions and strategy documents.",
+        "5": "Market research and stakeholder interviews provide context, but synthesis is entirely human-driven.",
+        "6": "Discovery is exploratory and freeform — workshops, stakeholder interviews, competitive immersion. Inputs are rarely consistent.",
+        "7": "Brand work goes through extensive client review and iteration at every stage.",
+        "8": "Brand effectiveness is measured over years through market perception — not immediately verifiable."
+      }
+    },
+    "11": {
+      "intro": "Email and marketing automation is the highest-scoring service in this audit. High volume, structured templates, clear deliverability metrics, and automated workflows all align well. The human role shifts from production to strategy and quality oversight.",
+      "hints": {
+        "1": "Automated sequences run continuously across client databases — welcome flows, nurtures, re-engagement. Volume is very high.",
+        "2": "The bottleneck is managing production scale — writing, testing, and optimizing dozens of touchpoints across client bases.",
+        "3": "A poorly configured automation sending the wrong message to a large list is visible and immediate — but manageable.",
+        "4": "Email systems handle subscriber lists, behavioral data, and personally identifiable information. GDPR and CAN-SPAM compliance are required — use an enterprise model and review your data processing agreements.",
+        "5": "CRM data, audience segments, past campaign benchmarks, and automation platform analytics are rich and accessible.",
+        "6": "Email templates, audience segments, and automation logic provide strong, replicable structure.",
+        "7": "Automation workflows are built and reviewed by account managers before activation — human oversight is built in.",
+        "8": "Open rates, click rates, unsubscribe rates, and conversions are immediately and precisely measurable."
+      }
+    },
+    "12": {
+      "intro": "SEO is a strong AI candidate — and AI optimization (AIO) makes it even more so. Technical SEO and keyword-driven content are repetitive, data-driven, and measurable. Search strategy and editorial judgment stay human.",
+      "hints": {
+        "1": "Active SEO programs require regular content production, keyword monitoring, and technical audits — ongoing and frequent.",
+        "2": "Technical SEO tasks and content optimization at scale are volume problems — large amounts of structured, repetitive work.",
+        "3": "Violating search engine guidelines can result in ranking penalties — serious but rare and avoidable with good practice.",
+        "4": "SEO data is generally non-sensitive. If client analytics data or proprietary keyword strategies are included in prompts, use an appropriate enterprise tool.",
+        "5": "Keyword research data, search console analytics, competitor analysis, and content audits are structured and accessible.",
+        "6": "SEO briefs, keyword frameworks, and content optimization checklists provide clear, repeatable structure.",
+        "7": "SEO content is reviewed before publishing and optimized iteratively based on performance data.",
+        "8": "Organic traffic, keyword rankings, and search visibility are directly and consistently measurable."
+      }
+    },
+    "13": {
+      "intro": "Design and collateral splits by type. Branded social graphics and templated materials score higher on AI suitability. Annual reports, campaign creative, and original visual concepts require design judgment and brand sensitivity that stays human.",
+      "hints": {
+        "1": "Social graphics and templated materials can be high volume. Annual reports and campaign assets are lower frequency.",
+        "2": "Templated production (resizing, adapting existing assets) is a volume bottleneck. Original creative is a judgment bottleneck.",
+        "3": "Off-brand or low-quality design reflects directly on the client's professional credibility. Moderate-to-high stakes.",
+        "4": "Design briefs may contain unreleased brand identities or client-sensitive positioning. Evaluate data sensitivity per project before using a public AI tool.",
+        "5": "Brand asset libraries, style guides, past materials, and approved templates typically exist for established clients.",
+        "6": "Brand guidelines and templates provide strong structure for production work. Campaign concepting does not.",
+        "7": "All design work is reviewed before client delivery — multiple rounds of feedback are standard.",
+        "8": "Whether a design meets brand guidelines is verifiable. Whether it's compelling is subjective."
+      }
+    },
+    "14": {
+      "intro": "Website delivery often follows a staged process: Discovery, IA, Content & Design, Build, QA, and Launch. The strategy and design phases are judgment-heavy. The build and QA phases are more systematic and increasingly AI-assistable.",
+      "hints": {
+        "1": "Website builds are project-based — one per client engagement, with periodic updates. Very low frequency.",
+        "2": "Design and strategy phases are judgment bottlenecks. The build phase becomes more systematic once decisions are made.",
+        "3": "A site that launches broken, inaccessible, or off-brand is public and immediate. High stakes.",
+        "4": "Website projects may include client architecture decisions, unreleased content, and system credentials during development. High sensitivity — treat all project data as confidential.",
+        "5": "Content briefs, sitemap, brand guidelines, and CMS templates provide structure during the build phase.",
+        "6": "Discovery and IA are exploratory. The build phase is more structured with defined page templates and CMS frameworks.",
+        "7": "Extensive QA and client review happens at every stage — especially before launch.",
+        "8": "Functional requirements (does it work, does it load, does it convert) are verifiable. Design quality is not."
+      }
+    },
+    "15": {
+      "intro": "Website copywriting sits at the intersection of messaging strategy and SEO. It's more structured than brand copy but requires clear understanding of the client's voice, audience, and conversion goals. AI can assist with drafts and optimization — the strategic narrative must be human.",
+      "hints": {
+        "1": "Website copy is produced once per project, then updated periodically. Moderate frequency across a full client portfolio.",
+        "2": "Production is partly a volume problem (all those pages) and partly a judgment problem (how do you say this best?).",
+        "3": "Poor copy on a live website reflects directly on the client. Editable, but visible and reputation-affecting.",
+        "4": "Copy briefs may include confidential messaging strategy and unreleased positioning. Treat brand messaging documents as confidential and use an appropriate model.",
+        "5": "Brand messaging documents, SEO briefs, competitor sites, and sitemaps provide rich source material.",
+        "6": "Sitemap, brand messaging platform, and SEO keywords provide good structure for each page.",
+        "7": "All copy goes through client review and revision cycles before the site goes live.",
+        "8": "SEO performance and conversion rates are measurable over time. Whether copy resonates is harder to verify immediately."
+      }
+    }
+  }
+}

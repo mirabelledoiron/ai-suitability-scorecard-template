@@ -1,0 +1,147 @@
+{
+  "branding": {
+    "productName": "Acme Agency AI Scorecard",
+    "organizationName": "Acme Agency",
+    "logoUrl": "/tenants/acme-logo.svg",
+    "faviconUrl": "/tenants/acme-favicon.ico",
+
+    "theme": {
+      "primaryColor": "#7c3aed",
+      "accentColor": "#a855f7",
+      "sidebarBg": "#1e1b4b",
+      "sidebarText": "#a5b4fc"
+    },
+
+    "content": {
+      "heroTitle": "Acme Agency AI Suitability Scorecard",
+      "heroSubtitle": "Is AI actually the right call here?",
+      "heroBody": [
+        "This scorecard helps Acme Agency teams evaluate whether a workflow is a genuine candidate for AI or automation — before committing budget or time.",
+        "Score any workflow across eight suitability factors to get a clear, defensible recommendation:"
+      ],
+      "heroBullets": [
+        {
+          "label": "Protect client relationships",
+          "text": "by keeping high-stakes, judgment-intensive work human-led."
+        },
+        {
+          "label": "Capture real efficiency gains",
+          "text": "only where volume, structure, and low error-stakes align."
+        },
+        {
+          "label": "Build a track record",
+          "text": "of AI decisions that are auditable and easy to explain."
+        }
+      ],
+      "heroNote": "Use this in client discovery sessions, internal sprint planning, or quarterly AI audits.",
+      "heroCta": "Start Scoring →",
+      "contactCta": "Contact Acme Agency to discuss next steps for this workflow."
+    },
+
+    "criteriaOverrides": {
+      "4": {
+        "title": "Is there a human quality gate before the output is used?",
+        "sub": "AI outputs should always pass through a review step — especially anything client-facing."
+      },
+      "6": {
+        "title": "What is the consequence if this output is wrong?",
+        "sub": "Higher stakes require tighter human oversight. Never automate decisions your client can't recover from."
+      }
+    },
+
+    "categoryOverrides": {
+      "no-fit": {
+        "tag": "Not Ready",
+        "title": "Fix the process before adding AI",
+        "body": "The workflow lacks the structure, volume, or verifiability that AI requires. Adding AI to a broken process just makes it break faster. Redesign first."
+      },
+      "ai-system": {
+        "tag": "Build It",
+        "title": "Strong case for a custom AI system",
+        "body": "High volume, structured inputs, and manageable risk make this a compelling candidate for a purpose-built AI workflow. Define your success metrics, then scope the build."
+      }
+    },
+
+    "thresholds": {
+      "noFit": 16,
+      "automation": 24,
+      "aiAssisted": 32
+    }
+  },
+
+  "workflows": [
+    { "id": 1, "group": "Operations", "title": "Client Intake & Onboarding", "desc": "Processing new client inquiries, contracts, and setup tasks." },
+    { "id": 2, "group": "Operations", "title": "Reporting & Insights", "desc": "Generating weekly/monthly reports for internal teams and clients." },
+    { "id": 3, "group": "Marketing", "title": "Content Production", "desc": "Writing, editing, and publishing blog posts, social copy, and email campaigns." },
+    { "id": 4, "group": "Marketing", "title": "Campaign Briefing", "desc": "Translating strategy into creative briefs for design and copy teams." },
+    { "id": 5, "group": "Creative", "title": "Design Asset Creation", "desc": "Producing on-brand visual assets for digital and print." }
+  ],
+
+  "context": {
+    "1": {
+      "intro": "Client intake and onboarding involves collecting information, setting up accounts, and communicating next steps. Consider how structured your intake form or CRM fields are.",
+      "hints": {
+        "1": "How many new clients do you onboard per week on average?",
+        "2": "Do clients fill out a standard intake form, or does it vary by account manager?",
+        "3": "Can you check whether an onboarding task is complete without expert judgment?",
+        "4": "Does a team lead review the setup before the client is notified?",
+        "5": "Is the bottleneck that there are too many intakes, or that each one requires custom thinking?",
+        "6": "What happens if a client account is set up incorrectly?",
+        "7": "Do you have past onboarding records or templates to reference?",
+        "8": "Does a completed onboarding always look roughly the same?"
+      }
+    },
+    "2": {
+      "intro": "Reporting workflows typically involve pulling data, summarizing performance, and formatting outputs. Consistency of data sources is the key variable here.",
+      "hints": {
+        "1": "How frequently are these reports produced?",
+        "2": "Does each report follow the same template, or does it change by client?",
+        "3": "Is it easy to tell if a report is accurate without domain expertise?",
+        "4": "Does someone sign off on the report before it goes to the client?",
+        "5": "Is the slow part pulling the data, or interpreting it?",
+        "6": "What happens if a report contains an error the client notices?",
+        "7": "Do you have historical data and past reports to reference?",
+        "8": "Do all reports follow a consistent structure?"
+      }
+    },
+    "3": {
+      "intro": "Content production covers the creation of written assets. The key question is how much of the work is templated versus requiring genuine creative judgment.",
+      "hints": {
+        "1": "How many pieces of content are produced per week?",
+        "2": "Does each piece start from a brief or template, or from scratch?",
+        "3": "Can you objectively tell when a piece of content is 'done'?",
+        "4": "Does an editor or strategist review before publishing?",
+        "5": "Is the bottleneck volume of content, or quality of each piece?",
+        "6": "What happens if a published piece contains a factual error or tone issue?",
+        "7": "Do you have a brand voice guide, past content, and templates?",
+        "8": "Does finished content typically follow a predictable format?"
+      }
+    },
+    "4": {
+      "intro": "Campaign briefing turns strategy into actionable direction for creative teams. The challenge is often translating qualitative client context into structured instructions.",
+      "hints": {
+        "1": "How often are new campaign briefs created?",
+        "2": "Do briefs follow a standard template?",
+        "3": "Is there a clear quality standard a brief must meet?",
+        "4": "Does a strategist or account lead review the brief before it goes to creative?",
+        "5": "Is the bottleneck writing the brief, or deciding what the campaign should be?",
+        "6": "What's the consequence of a brief that misses the client's intent?",
+        "7": "Do you have past briefs and brand guidelines to draw from?",
+        "8": "Do completed briefs follow a consistent structure?"
+      }
+    },
+    "5": {
+      "intro": "Design asset production involves creating visual content at scale. AI can assist with templated formats but struggles with original creative direction.",
+      "hints": {
+        "1": "How many individual design assets are produced per week?",
+        "2": "Does each asset start from a template or an established design system?",
+        "3": "Is there a clear brand standard to check the output against?",
+        "4": "Does a designer or creative director approve before delivery?",
+        "5": "Is the slowness due to volume of requests or complexity of each one?",
+        "6": "What happens if an off-brand asset is delivered to a client?",
+        "7": "Do you have a robust design system, templates, and past assets?",
+        "8": "Do all delivered assets follow a predictable format or layout?"
+      }
+    }
+  }
+}
