@@ -44,6 +44,22 @@ export function applyTenantTheme(branding: TenantBranding, defaultTitle: string)
     link.href = branding.faviconUrl;
   }
 
-  // Document title
-  document.title = branding.productName ?? defaultTitle;
+  // Document title + OG title
+  const title = branding.productName ?? defaultTitle;
+  document.title = title;
+  document.querySelector<HTMLMetaElement>('meta[property="og:title"]')?.setAttribute('content', title);
+  document.querySelector<HTMLMetaElement>('meta[name="twitter:title"]')?.setAttribute('content', title);
+
+  // Description + OG description (use heroSubtitle if available)
+  const subtitle = branding.content?.heroSubtitle;
+  if (subtitle) {
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')?.setAttribute('content', subtitle);
+    document.querySelector<HTMLMetaElement>('meta[property="og:description"]')?.setAttribute('content', subtitle);
+    document.querySelector<HTMLMetaElement>('meta[name="twitter:description"]')?.setAttribute('content', subtitle);
+  }
+
+  // Theme color (use primary if available)
+  if (theme?.primaryColor) {
+    document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', theme.primaryColor);
+  }
 }
