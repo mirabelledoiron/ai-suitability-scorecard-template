@@ -1,4 +1,4 @@
-# AI Suitability Scorecard
+# AI Suitability Scorecard Template
 
 An interactive tool for evaluating whether AI is actually the right solution for a specific workflow — before recommending or implementing anything.
 
